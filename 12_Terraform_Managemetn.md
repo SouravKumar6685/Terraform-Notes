@@ -1,21 +1,21 @@
 # 🚀 **Terraform Security & Secret Management Best Practices**  
 
-Terraform ka **Security, Secret Management aur IAM Policy Best Practices** cover karenge. ⚡  
+We'll cover **Security, Secret Management, and IAM Policy Best Practices** in Terraform. ⚡  
 
 ---
 
 # **1️⃣ Secret Management with AWS Secrets Manager & SSM Parameter Store**  
 
-Terraform se **AWS Secrets Manager aur SSM Parameter Store** integrate karenge taki **secrets (DB password, API keys, credentials) securely store ho sakein**. 🛡️  
+We'll integrate **AWS Secrets Manager and SSM Parameter Store** with Terraform to **securely store secrets (DB passwords, API keys, credentials, etc.)** 🛡️  
 
 ---
 
 ### **🛠 AWS Secrets Manager – Store & Retrieve Secrets**  
 
 ### **📌 Steps:**  
-✅ **Terraform se AWS Secrets Manager Resource Create**  
-✅ **Secret Store karna (DB Password, API Key)**  
-✅ **Secrets Read & Use in Terraform**  
+✅ **Create AWS Secrets Manager Resource using Terraform**  
+✅ **Store Secrets (DB Password, API Key, etc.)**  
+✅ **Read & Use Secrets in Terraform**  
 
 ---
 
@@ -33,7 +33,7 @@ resource "aws_secretsmanager_secret_version" "db_secret_version" {
   })
 }
 ```
-✔ **Secrets securely store ho gaye!** 🔐  
+✔ **Secrets are securely stored!** 🔐  
 
 ---
 
@@ -52,7 +52,7 @@ output "db_password" {
   sensitive = true
 }
 ```
-✔ **Terraform ab secrets securely use kar sakta hai!** 🔑  
+✔ **Terraform can now securely use secrets!** 🔑  
 
 ---
 
@@ -64,16 +64,16 @@ resource "aws_ssm_parameter" "db_password" {
   value = "SuperSecurePassword123!"
 }
 ```
-✔ **AWS SSM Parameter Store bhi use kar sakte hain for secure storage!** 🔒  
+✔ **AWS SSM Parameter Store can also be used for secure storage!** 🔒  
 
 ---
 
-# **2️⃣ IAM Policy & Role Management Best Practices**
-AWS IAM **secure karne ke liye** Terraform ka best practice use karenge.  
+# **2️⃣ IAM Policy & Role Management Best Practices**  
+We'll use Terraform best practices to **secure AWS IAM**.  
 
 ### **📌 Best Practices:**  
-✅ **Principle of Least Privilege (Minimum Access Grant karo)**  
-✅ **IAM Policies ko Reuse karo (Avoid Hardcoding)**  
+✅ **Follow the Principle of Least Privilege (Grant Minimum Access)**  
+✅ **Reuse IAM Policies (Avoid Hardcoding)**  
 ✅ **Attach Policies to Groups Instead of Users**  
 ✅ **Use Managed Policies Instead of Inline Policies**  
 ✅ **Rotate IAM Access Keys Regularly**  
@@ -95,7 +95,7 @@ resource "aws_iam_role" "app_role" {
   })
 }
 ```
-✔ **Only EC2 ko ye role assume karne ki permission di gayi hai!** 🔐  
+✔ **Only EC2 is allowed to assume this role!** 🔐  
 
 ---
 
@@ -115,18 +115,18 @@ resource "aws_iam_policy" "s3_readonly" {
   })
 }
 ```
-✔ **S3 ka sirf read-only access diya gaya hai!** 🛡️  
+✔ **Only read-only access to S3 is granted!** 🛡️  
 
 ---
 
 # **3️⃣ Terraform Security Scanning Tools (tfsec, checkov)**  
 
-Infrastructure-as-Code (IaC) security ke liye **tfsec & checkov** ka use karenge jo Terraform code ke security vulnerabilities ko detect karte hain.  
+For Infrastructure-as-Code (IaC) security, we'll use **tfsec & checkov** to detect security vulnerabilities in Terraform code.  
 
 ### **📌 Steps:**  
-✅ **tfsec & checkov Install karna**  
-✅ **Terraform Security Scan Run karna**  
-✅ **Security Issues Fix karna**  
+✅ **Install tfsec & checkov**  
+✅ **Run Terraform Security Scan**  
+✅ **Fix Security Issues**  
 
 ---
 
@@ -144,7 +144,7 @@ curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/inst
 ```bash
 tfsec .
 ```
-✔ **Security Issues mil gaye!** 🔍  
+✔ **Security Issues Detected!** 🔍  
 
 ---
 
@@ -160,14 +160,14 @@ pip install checkov
 ```bash
 checkov -d .
 ```
-✔ **checkov ne Terraform ke security vulnerabilities detect kiye!** 🛡️  
+✔ **checkov detected security vulnerabilities in Terraform!** 🛡️  
 
 ---
 
-# **🎯 Summary**
-✅ **AWS Secrets Manager & SSM se Secure Secrets Storage**  
-✅ **IAM Policy & Role Best Practices Implement**  
-✅ **tfsec & checkov se Terraform Code Security Scan**  
+# **🎯 Summary**  
+✅ **Secure Secrets Storage using AWS Secrets Manager & SSM**  
+✅ **Implement IAM Policy & Role Best Practices**  
+✅ **Perform Terraform Code Security Scan using tfsec & checkov**  
 
 🚀 **Next Steps:**  
 🔹 **Terraform Remote State Encryption**  
