@@ -1,21 +1,21 @@
 # 🚀 **Terraform CI/CD with GitHub Actions & Jenkins**  
 
-Terraform ko **GitHub Actions ya Jenkins** ke saath automate karenge, jisme **Linting, Code Formatting, Drift Detection, and Auto Fixes** bhi include honge. ⚡  
+We will automate Terraform with **GitHub Actions or Jenkins**, including **Linting, Code Formatting, Drift Detection, and Auto Fixes**. ⚡  
 
 ---
 
-## **1️⃣ Terraform with GitHub Actions**
-GitHub Actions se Terraform **plan, apply, linting & state management** automate karenge.
+## **1️⃣ Terraform with GitHub Actions**  
+We will automate Terraform **plan, apply, linting & state management** using GitHub Actions.  
 
 ### **📌 Steps:**  
-✅ **GitHub Actions Workflow likhna**  
+✅ **Write a GitHub Actions Workflow**  
 ✅ **Terraform Linting & Formatting**  
 ✅ **Terraform Plan & Apply Automation**  
 ✅ **Terraform State Management with S3 & DynamoDB**  
 
 ---
 
-### **🛠 Step 1: Create `.github/workflows/terraform.yml`**
+### **🛠 Step 1: Create `.github/workflows/terraform.yml`**  
 ```yaml
 name: Terraform CI/CD
 
@@ -55,18 +55,18 @@ jobs:
 
 ---
 
-## **2️⃣ Terraform with Jenkins**
-Jenkins pipeline likhenge jo **Terraform ko automate** karega.
+## **2️⃣ Terraform with Jenkins**  
+We will write a Jenkins pipeline to **automate Terraform execution**.  
 
 ### **📌 Steps:**  
-✅ **Jenkins Pipeline Create**  
+✅ **Create a Jenkins Pipeline**  
 ✅ **Terraform Linting & Validation**  
 ✅ **Terraform Plan & Apply**  
-✅ **Terraform State Store in S3**  
+✅ **Store Terraform State in S3**  
 
 ---
 
-### **🛠 Step 1: Create Jenkinsfile**
+### **🛠 Step 1: Create `Jenkinsfile`**  
 ```groovy
 pipeline {
     agent any
@@ -117,8 +117,8 @@ pipeline {
 
 ---
 
-## **3️⃣ Terraform Linting & Code Formatting**
-Terraform code **best practices follow kare, formatting sahi ho, aur errors detect ho**.  
+## **3️⃣ Terraform Linting & Code Formatting**  
+Ensure Terraform code **follows best practices, is properly formatted, and detects errors**.  
 
 ### **📌 Steps:**  
 ✅ **Linting with `tflint`**  
@@ -127,12 +127,12 @@ Terraform code **best practices follow kare, formatting sahi ho, aur errors dete
 
 ---
 
-### **🛠 Step 1: Install TFLint**
+### **🛠 Step 1: Install TFLint**  
 ```bash
 curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install.sh | bash
 ```
 
-### **🛠 Step 2: Run Linting**
+### **🛠 Step 2: Run Linting**  
 ```bash
 tflint --init
 tflint
@@ -141,7 +141,7 @@ tflint
 
 ---
 
-### **🛠 Step 3: Auto Format Code**
+### **🛠 Step 3: Auto Format Code**  
 ```bash
 terraform fmt -recursive
 ```
@@ -149,8 +149,8 @@ terraform fmt -recursive
 
 ---
 
-## **4️⃣ Terraform Drift Detection & Automated Fixes**
-Drift detection **detect karega agar infrastructure manually change ho jaye** aur **auto-fix karne ka process setup karenge**.  
+## **4️⃣ Terraform Drift Detection & Automated Fixes**  
+Drift detection **will identify if infrastructure changes manually** and **we will set up an auto-fix process**.  
 
 ### **📌 Steps:**  
 ✅ **Detect Infrastructure Drift**  
@@ -158,7 +158,7 @@ Drift detection **detect karega agar infrastructure manually change ho jaye** au
 
 ---
 
-### **🛠 Step 1: Check for Drift**
+### **🛠 Step 1: Check for Drift**  
 ```bash
 terraform refresh
 terraform plan
@@ -167,7 +167,7 @@ terraform plan
 
 ---
 
-### **🛠 Step 2: Automate Fixing with GitHub Actions**
+### **🛠 Step 2: Automate Fixing with GitHub Actions**  
 ```yaml
 - name: Check Terraform Drift
   run: terraform plan -detailed-exitcode || echo "Terraform Drift Detected!"
@@ -180,9 +180,9 @@ terraform plan
 
 ---
 
-# **🎯 Summary**
-✅ **GitHub Actions se Terraform Automate**  
-✅ **Jenkins Pipeline se Terraform Deployment**  
+# **🎯 Summary**  
+✅ **Automated Terraform with GitHub Actions**  
+✅ **Terraform Deployment via Jenkins Pipeline**  
 ✅ **Linting, Formatting, & Best Practices**  
 ✅ **Terraform Drift Detection & Auto Fixes**  
 
