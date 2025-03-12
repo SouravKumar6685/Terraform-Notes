@@ -1,14 +1,14 @@
 # 🚀 **AWS EKS Cluster Setup with Terraform & Kubernetes Deployment**  
 
-AWS EKS (Elastic Kubernetes Service) ko **Terraform se automate** karenge, jisme **Kubernetes cluster**, **Pods & Services**, aur **Helm charts** deploy karenge. ⚡  
+We will **automate AWS EKS (Elastic Kubernetes Service) using Terraform**, where we will deploy a **Kubernetes cluster, Pods & Services, and Helm charts**. ⚡  
 
 ---
 
 ## **1️⃣ AWS EKS Cluster Setup with Terraform**  
 
 ### **📌 Steps:**  
-1️⃣ **VPC & Subnets** – EKS ke liye networking setup  
-2️⃣ **IAM Roles & Policies** – Kubernetes ko AWS access dena  
+1️⃣ **VPC & Subnets** – Setting up networking for EKS  
+2️⃣ **IAM Roles & Policies** – Granting AWS access to Kubernetes  
 3️⃣ **EKS Cluster Creation** – Managed control plane  
 4️⃣ **Node Group (EC2 Instances)** – Worker nodes for Kubernetes  
 
@@ -95,10 +95,10 @@ resource "aws_eks_node_group" "eks_nodes" {
 ---
 
 ## **2️⃣ Deploying Pods & Services on EKS using Terraform**  
-EKS cluster ke andar ek simple **Nginx Deployment & Service** banayenge.  
+We will create a simple **Nginx Deployment & Service** inside the EKS cluster.  
 
 ### **📌 Steps:**  
-✅ **Kubernetes Provider** setup in Terraform  
+✅ **Setup Kubernetes Provider in Terraform**  
 ✅ **Deployment (Pods running Nginx)**  
 ✅ **Service (LoadBalancer for external access)**  
 
@@ -166,7 +166,7 @@ resource "kubernetes_service" "nginx_service" {
 ---
 
 ## **3️⃣ Helm & Terraform – Kubernetes App Deployment**  
-Helm se **Kubernetes applications** deploy karna aur Terraform ke saath manage karna.  
+Deploying **Kubernetes applications using Helm** and managing them with Terraform.  
 
 ### **📌 Steps:**  
 ✅ **Helm Provider Setup**  
@@ -221,9 +221,9 @@ resource "helm_release" "my_app" {
 ---
 
 # **🎯 Summary**
-✅ **Terraform se AWS EKS Cluster Setup**  
-✅ **Terraform se Pods & Services Deploy**  
-✅ **Helm aur Terraform se Kubernetes App Deployment**  
+✅ **AWS EKS Cluster Setup with Terraform**  
+✅ **Deploying Pods & Services using Terraform**  
+✅ **Kubernetes App Deployment using Helm & Terraform**  
 
 🚀 **Next Steps:**  
 🔹 **Terraform State Management (Remote Backend)**  
